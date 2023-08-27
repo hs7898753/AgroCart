@@ -2,7 +2,7 @@
   background-color: rgba(249, 249, 242, 1);
   width: 100%;
   height: 70px;
-  position: sticky;
+  position: fixed;
   top: 0px;
   display: flex;
   justify-content: center;

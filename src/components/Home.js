@@ -1,7 +1,14 @@
 import "./Home.css";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 function Home() {
-  return <h1>Home</h1>;
+  return (
+    <>
+      <Navbar />
+      <Footer />
+    </>
+  );
 }
 
 export default Home;
