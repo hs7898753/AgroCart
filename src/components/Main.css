@@ -1,0 +1,29 @@
+.main {
+  background-color: rgba(249, 249, 242, 1);
+  height: 100vh;
+  z-index: 0;
+}
+h1 span {
+  color: rgba(254, 104, 47, 1);
+}
+.header {
+  position: absolute;
+  top: 250px;
+  left: 20%;
+  text-align: left;
+}
+.header h1 {
+  padding: 5px;
+  font-size: 50px;
+}
+.header h3 {
+  font-size: 30px;
+  position: relative;
+  left: 9px;
+}
+.header p {
+  font-family: Jost;
+  color: rgba(163, 163, 163, 1);
+  position: relative;
+  left: 9px;
+}
