@@ -1,0 +1,159 @@
+.navbar {
+  background-color: rgba(249, 249, 242, 1);
+  width: 100%;
+  height: 70px;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+.logo img {
+  max-width: 100px;
+  height: auto;
+  position: absolute;
+  top: 0px;
+  left: 5px;
+}
+
+.navbarlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbarlist li {
+  list-style: none;
+  padding: 0 10px;
+  position: relative;
+}
+.navbarlist li a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+
+.navbarlist li a:hover,
+.navbarlist li a.active {
+  color: crimson;
+}
+.navbarlist li a:hover:after,
+.navbarlist li a.active:after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background: crimson;
+  position: absolute;
+  bottom: -4px;
+  left: 15px;
+}
+
+#mobile {
+  display: none;
+}
+
+#mobile i {
+  color: black;
+  size: xl;
+}
+#bar {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+#mobile i {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Sign-in && Sign-up Buttons css*/
+
+.SignInUp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-to-cart {
+  background-color: #000;
+  color: #fff;
+  font-size: 10px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.add-to-cart:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.add-to-cart.added {
+  background-color: #000;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+.add-to-cart.added .text {
+  opacity: 0.5;
+}
+
+@keyframes add-to-cart-animation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.add-to-cart:hover {
+  animation: add-to-cart-animation 0.5s ease-in-out;
+}
+
+@media screen and (min-width: 769px) {
+  .SignInUp {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #mobile {
+    display: block;
+  }
+  .hide {
+    display: none;
+  }
+
+  .navbarlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    top: 60px;
+    right: -300px;
+    width: 200px;
+    height: 100vh;
+    background: rgba(249, 249, 242, 1);
+    padding: 40px 0 0 10px;
+    border-radius: 40px 0 0 0;
+    border-left: 0.1px solid rgb(229, 240, 171);
+  }
+
+  .navbarlist li {
+    margin-bottom: 25px;
+  }
+  .navbarlist.active {
+    right: 0px;
+  }
+}
