@@ -1,13 +1,15 @@
 footer {
+  margin-bottom: 0;
   color: white;
   background-color: rgba(78, 125, 100, 1);
-  padding: 25px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: static;
   bottom: 0px;
   width: 100vw;
-  max-height: 50vh;
+  overflow: auto;
+  z-index: 3;
 }
 .sec1 {
   display: flex;
@@ -69,6 +71,6 @@ li {
     padding: 20px;
   }
   footer {
-    overflow-y: auto;
+    overflow: auto;
   }
 }
