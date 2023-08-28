@@ -1,0 +1,203 @@
+.featureproduct {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: green;
+  width: 100vw;
+  height: 300px;
+  flex-basis: 100%;
+  overflow: hidden;
+}
+.product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.heading {
+  color: white;
+  flex-basis: 30%;
+}
+
+.heading span {
+  font-size: 50px;
+  font-family: Jost;
+  font-weight: 700;
+}
+
+/* Card CSS */
+
+.card {
+  width: 190px;
+  height: 254px;
+  background: rgb(252, 252, 253);
+  box-shadow: 4px 6px 14px #00000036;
+  border-radius: 10px;
+  color: black;
+  padding: 30px;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  margin-top: -30px;
+  align-items: center;
+}
+
+.card img {
+  width: 170px;
+  position: relative;
+  left: -20px;
+}
+.card span {
+  font-size: 25px;
+  position: relative;
+  top: 10px;
+}
+
+.down {
+  position: relative;
+  top: 70px;
+}
+.up {
+  position: relative;
+  top: -70px;
+}
+.up img {
+  position: relative;
+  top: 40px;
+}
+.up span {
+  position: relative;
+  top: 50px;
+}
+.up p {
+  font-family: Jost;
+  color: rgba(163, 163, 163, 1);
+  font-size: 10px;
+  position: relative;
+  top: 50px;
+}
+.down p {
+  font-family: Jost;
+  color: rgba(163, 163, 163, 1);
+  font-size: 10px;
+  position: relative;
+  top: 11px;
+  left: 2px;
+}
+
+/* Main Last */
+.mainLast {
+  height: 80vh;
+  background: rgba(249, 249, 242, 1);
+}
+.services {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 100px;
+}
+.mainLast section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainLast img {
+  width: 80px;
+  padding-right: 10px;
+}
+.mainLast p {
+  font-family: Jost;
+  color: rgba(163, 163, 163, 1);
+  font-size: 15px;
+}
+
+.address {
+  position: relative;
+  top: 250px;
+}
+.address span {
+  font-size: 50px;
+  color: rgba(78, 125, 100, 1);
+  font-family: Jost;
+}
+
+/* Search Box CSS */
+.search {
+  position: relative;
+  left: 550px;
+}
+:root {
+  --rad: 0.7rem;
+  --dur: 0.3s;
+  --color-dark: #2f2f2f;
+  --color-light: #fff;
+  --color-brand: #57bd84;
+  --font-fam: "Lato", sans-serif;
+  --height: 3rem;
+  --btn-width: 6rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
+}
+form {
+  position: relative;
+  width: 20rem;
+  background: var(--color-brand);
+  border-radius: var(--rad);
+  border: 0.3px solid black;
+}
+input,
+button {
+  height: var(--height);
+  font-family: var(--font-fam);
+  border: 0;
+  color: var(--color-dark);
+  font-size: 1.8rem;
+}
+input[type="search"] {
+  outline: 0;
+  width: 100%;
+  background: var(--color-light);
+  padding: 0 1.6rem;
+  border-radius: var(--rad);
+  appearance: none;
+  transition: all var(--dur) var(--bez);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+button {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--btn-width);
+  font-weight: bold;
+  background: var(--color-brand);
+  border-radius: 0 var(--rad) var(--rad) 0;
+}
+input:not(:placeholder-shown) {
+  border-radius: var(--rad) 0 0 var(--rad);
+  width: calc(100% - var(--btn-width));
+  + button {
+    display: block;
+  }
+}
+label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 769px) {
+  .featureproduct {
+    flex-direction: column-reverse;
+    height: 90vh;
+  }
+}
