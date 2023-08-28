@@ -148,10 +148,10 @@ nav {
     top: 60px;
     right: -300px;
     width: 200px;
-    height: 100vh;
-    background: rgba(249, 249, 242, 1);
+    height: 87vh;
+    background: black;
     padding: 40px 0 0 10px;
-    border-radius: 40px 0 0 0;
+    border-radius: 20px 0 0 20px;
     border-left: 0.1px solid rgb(229, 240, 171);
     z-index: 999;
   }
@@ -159,6 +159,9 @@ nav {
   .navbarlist li {
     margin-bottom: 25px;
     font-size: 20px;
+  }
+  .navbarlist li a {
+    color: white;
   }
   .navbarlist.active {
     right: 0px;
