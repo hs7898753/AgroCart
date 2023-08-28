@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <a href="index.html" class="logo">
+        <a href="index.html" className="logo">
           <img src={logo} alt="logo" />{" "}
         </a>
 
@@ -17,20 +17,20 @@ function Navbar() {
                 Home
               </a>
             </li>
-            <li class="hide">|</li>
+            <li className="hide">|</li>
             <li>
               <a href="index.html">Shop</a>
             </li>
-            <li class="hide">|</li>
+            <li className="hide">|</li>
             <li>
               <a href="index.html">About</a>
             </li>
             <div className="SignInUp">
-              <button class="add-to-cart">
-                <span class="text">Sign-in</span>
+              <button className="add-to-cart">
+                <span className="text">Sign-in</span>
               </button>
-              <button class="add-to-cart">
-                <span class="text">Sign-up</span>
+              <button className="add-to-cart">
+                <span className="text">Sign-up</span>
               </button>
             </div>
           </ul>
