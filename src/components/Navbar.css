@@ -1,6 +1,7 @@
 nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  z-index: 100;
 }
 .navbar {
   background-color: rgba(249, 249, 242, 1);
@@ -78,6 +79,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1010;
 }
 .add-to-cart {
   background-color: #000;
