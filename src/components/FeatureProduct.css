@@ -124,6 +124,9 @@
   color: rgba(78, 125, 100, 1);
   font-family: Jost;
 }
+#delivery {
+  width: 100px;
+}
 
 /* Search Box CSS */
 .search {
@@ -199,5 +202,32 @@ label {
   .featureproduct {
     flex-direction: column-reverse;
     height: 90vh;
+  }
+  .services {
+    padding-left: 20px;
+  }
+  .mainLast img {
+    width: 60px;
+    padding-right: 10px;
+  }
+  #delivery {
+    width: 80px;
+  }
+  .mainLast h2 {
+    font-size: 20px;
+  }
+  .address span {
+    font-size: 40px;
+    position: relative;
+    left: 15px;
+  }
+  form {
+    position: relative;
+    right: 200px;
+    width: 15rem;
+  }
+  input,
+  button {
+    height: 40px;
   }
 }

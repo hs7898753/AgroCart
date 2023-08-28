@@ -79,6 +79,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1010;
 }
 .add-to-cart {
   background-color: #000;

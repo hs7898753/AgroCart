@@ -10,17 +10,17 @@ function FeatureProduct() {
     <>
       <div className="featureproduct">
         <div className="product">
-          <div class="card down">
+          <div className="card down">
             <img src={Vegetable} alt="vegetable" />
             <span>Vegetables</span>
             <p>GET UP TO 60% OFF</p>
           </div>
-          <div class="card up">
+          <div className="card up">
             <img src={Fruits} alt="Fruits" />
             <span>Fruits</span>
             <p>GET UP TO 60% OFF</p>
           </div>
-          <div class="card down">
+          <div className="card down">
             <img src={Grains} alt="Grains" />
             <span>Grains</span>
             <p>GET UP TO 60% OFF</p>
@@ -37,7 +37,7 @@ function FeatureProduct() {
       <div className="mainLast">
         <div className="services">
           <section>
-            <img src={Delivery} alt="Delivery" style={{ width: "100px" }} />
+            <img id="delivery" src={Delivery} alt="Delivery" />
             <h2>
               Free Delivery <br /> <p>Free Delivery</p>
             </h2>
@@ -58,13 +58,12 @@ function FeatureProduct() {
         <div className="address">
           <span>CheckOut Delivery Address...</span>
           <div className="search">
-            <form onsubmit="event.preventDefault();" role="search">
-              <label for="search">Search for stuff</label>
+            <form role="search">
               <input
                 id="search"
                 type="search"
                 placeholder="Search..."
-                autofocus
+                autoFocus
                 required
               />
               <button type="submit">Go</button>
