@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/AgroCart/static/css/main.1f91e49b.css",
+    "main.js": "/AgroCart/static/js/main.accf903c.js",
+    "static/media/grains.jpg": "/AgroCart/static/media/grains.5b43b490f7ab0cae32ef.jpg",
+    "static/media/Vegetables.jpg": "/AgroCart/static/media/Vegetables.49997ceda3ef21e04be5.jpg",
+    "static/media/logo.png": "/AgroCart/static/media/logo.76ab7dc5d118a293d002.png",
+    "static/media/Fruits.jpg": "/AgroCart/static/media/Fruits.ee45a88cf68153cd3600.jpg",
+    "static/media/support.png": "/AgroCart/static/media/support.742caae5101d98ae2c49.png",
+    "static/media/cashback.png": "/AgroCart/static/media/cashback.fda0c38ceaff25502d3c.png",
+    "static/media/delivery.png": "/AgroCart/static/media/delivery.9fa47dc07f1b5a706727.png",
+    "index.html": "/AgroCart/index.html",
+    "main.1f91e49b.css.map": "/AgroCart/static/css/main.1f91e49b.css.map",
+    "main.accf903c.js.map": "/AgroCart/static/js/main.accf903c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f91e49b.css",
+    "static/js/main.accf903c.js"
+  ]
+}

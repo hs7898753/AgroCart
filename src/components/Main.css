@@ -1,7 +1,10 @@
 .main {
   background-color: rgba(249, 249, 242, 1);
-  height: 65vh;
+  height: 600px;
+  width: 100%;
   z-index: 0;
+  padding: 0;
+  margin: 0;
 }
 h1 span {
   color: rgba(254, 104, 47, 1);
@@ -28,8 +31,8 @@ h1 span {
   left: 9px;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 769px) {
   .main {
-    height: 90vh;
+    height: 500px;
   }
 }

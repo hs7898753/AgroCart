@@ -4,10 +4,11 @@
   justify-content: space-around;
   align-items: center;
   background-color: green;
-  width: 100vw;
+  width: 100%;
   height: 300px;
   flex-basis: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 .product {
   display: flex;
@@ -18,6 +19,7 @@
 .heading {
   color: white;
   flex-basis: 30%;
+  padding-left: 50px;
 }
 
 .heading span {
@@ -89,7 +91,7 @@
 
 /* Main Last */
 .mainLast {
-  height: 80vh;
+  height: 600px;
   background: rgba(249, 249, 242, 1);
 }
 .services {
@@ -184,10 +186,11 @@ button {
 input:not(:placeholder-shown) {
   border-radius: var(--rad) 0 0 var(--rad);
   width: calc(100% - var(--btn-width));
-  + button {
-    display: block;
-  }
 }
+input button {
+  display: block;
+}
+
 label {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
@@ -201,7 +204,9 @@ label {
 @media screen and (max-width: 769px) {
   .featureproduct {
     flex-direction: column-reverse;
-    height: 90vh;
+    height: 500px;
+    justify-content: center;
+    align-items: flex-start;
   }
   .services {
     padding-left: 20px;
