@@ -6,7 +6,7 @@ function Main() {
         <h1>
           <span>WELCOME</span> to AgroCart
         </h1>
-        <h3>Fresh From Farm</h3>
+        <h3>Fresh From Farms</h3>
         <p>GET UP TO 60% OFF</p>
       </div>
     </div>
