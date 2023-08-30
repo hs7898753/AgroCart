@@ -1,7 +1,9 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer"
 import "./About.css";
-import Harsh from "./profilePic.jpg";
+import Harsh from "./ProfilePics/Harsh.jpg";
+import Awasthi from "./ProfilePics/Awasthi.jpg";
+import Soumay from "./ProfilePics/Soumay.jpg";
 function About() {
   return(
     <>
@@ -17,15 +19,15 @@ function About() {
             <span>Harsh Sharma</span>
             <p>(211B131)</p>
         </div>
-        <div className="card ">
-            <img src={Harsh} alt="vegetable" />
-            <span>Harsh Sharma</span>
-            <p>(211B131)</p>
+        <div className="card awasthi">
+            <img src={Awasthi} alt="vegetable" />
+            <span>Harsh Awasthi</span>
+            <p>(211B129)</p>
         </div>
         <div className="card ">
-            <img src={Harsh} alt="vegetable" />
-            <span>Harsh Sharma</span>
-            <p>(211B131)</p>
+            <img src={Soumay} alt="vegetable" />
+            <span>Soumay Mishra</span>
+            <p>(211B316)</p>
         </div>
       </div>
       

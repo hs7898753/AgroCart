@@ -32,15 +32,21 @@
     width:100%;
     
 }
+.awasthi img{
+    height:200px;
+}
 /* Cards */
-@media screen and (max-width:480px)
+@media screen and (max-width:769px)
 {
+    .card{
+        margin:30px;
+        height:300px;
+    }
     .about{
         height:1600px;
     }
     .members{
         flex-direction: column;
-        padding:10px;
     }
     .heading{
         position: relative;
@@ -60,20 +66,17 @@
         bottom:40px;
     }
     
+    
 }
 
 .card {
     width: 250px;
     height: 320px;
-    padding-right: 10px;
     background: rgb(252, 252, 253);
     box-shadow: 4px 6px 14px #00000036;
     border-radius: 10px;
     color: black;
-    display: flex;
-    flex-direction: column;
     transition: all 0.3s;
-    align-content: center;
   }
   
   .card:hover {
@@ -83,17 +86,18 @@
   
   .card img {
     width: 210px;
-    align-items: center;
+    padding-left:20px;
   }
   .card span {
     font-size: 25px;
-    align-items: center;
+    position: relative;
+    left:22px;
   }
   .card p {
     font-size: 20px;
     position: relative;
     top:8px;
-    align-items: center;
+    left:52px;
   }
   .below{
    
