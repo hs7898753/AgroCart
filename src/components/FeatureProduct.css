@@ -27,17 +27,23 @@
   font-family: Jost;
   font-weight: 700;
 }
-
+.members{
+  position: absolute;
+  top:400px;
+  display: flex;
+  justify-content: space-evenly;
+}
 /* Card CSS */
 
 .card {
-  width: 190px;
+  width: 250px;
   height: 254px;
   background: rgb(252, 252, 253);
   box-shadow: 4px 6px 14px #00000036;
   border-radius: 10px;
   color: black;
   padding: 30px;
+  padding-right: 30px;;
   transition: all 0.3s;
 }
 
