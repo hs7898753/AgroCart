@@ -6,24 +6,24 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <a href="index.html" className="logo">
+        <a href="/" className="logo">
           <img src={logo} alt="logo" />{" "}
         </a>
 
         <div>
           <ul className={clicked ? "navbarlist active" : "navbarlist"}>
             <li>
-              <a href="Home.js" className="active">
+              <a href="/" className="active">
                 Home
               </a>
             </li>
             <li className="hide">|</li>
             <li>
-              <a href="index.html">Shop</a>
+              <a href="/shop">Shop</a>
             </li>
             <li className="hide">|</li>
             <li>
-              <a href="index.html">About</a>
+              <a href="/about">About</a>
             </li>
             <div className="SignInUp">
               <button className="add-to-cart">
