@@ -5,7 +5,7 @@
   align-items: center;
   background-color: green;
   width: 100%;
-  height: 300px;
+  height:fit-content;
   flex-basis: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -14,7 +14,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  overflow: hidden;
+  padding: 40px;
 }
 .heading {
   color: white;
@@ -27,23 +28,18 @@
   font-family: Jost;
   font-weight: 700;
 }
-.members{
-  position: absolute;
-  top:400px;
-  display: flex;
-  justify-content: space-evenly;
-}
+
 /* Card CSS */
 
 .card {
   width: 250px;
-  height: 254px;
+  height: 200px;
   background: rgb(252, 252, 253);
   box-shadow: 4px 6px 14px #00000036;
   border-radius: 10px;
   color: black;
   padding: 30px;
-  padding-right: 30px;;
+  padding-right: 30px;
   transition: all 0.3s;
 }
 
@@ -60,12 +56,16 @@
 .card span {
   font-size: 25px;
   position: relative;
-  top: 10px;
+  top:10px;
+  left:40px;
+  background-color: #2f2f2f;
 }
+
+
 
 .down {
   position: relative;
-  top: 70px;
+  top: 100px;
 }
 .up {
   position: relative;
@@ -84,15 +84,14 @@
   color: rgba(163, 163, 163, 1);
   font-size: 10px;
   position: relative;
-  top: 50px;
+  top: 70px;
 }
 .down p {
   font-family: Jost;
   color: rgba(163, 163, 163, 1);
   font-size: 10px;
-  position: relative;
-  top: 11px;
-  left: 2px;
+  position:relative;
+  top:30px;
 }
 
 /* Main Last */
@@ -126,12 +125,16 @@
 .address {
   position: relative;
   top: 250px;
+  left:20%;
 }
 .address span {
   font-size: 50px;
   color: rgba(78, 125, 100, 1);
   font-family: Jost;
+  display: block;
+  align-content: center;
 }
+
 #delivery {
   width: 100px;
 }
@@ -139,7 +142,7 @@
 /* Search Box CSS */
 .search {
   position: relative;
-  left: 550px;
+  left: 450px;
 }
 :root {
   --rad: 0.7rem;
@@ -188,6 +191,7 @@ button {
   font-weight: bold;
   background: var(--color-brand);
   border-radius: 0 var(--rad) var(--rad) 0;
+  color: #fff;
 }
 input:not(:placeholder-shown) {
   border-radius: var(--rad) 0 0 var(--rad);
@@ -196,7 +200,6 @@ input:not(:placeholder-shown) {
 input button {
   display: block;
 }
-
 label {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
@@ -206,6 +209,23 @@ label {
   width: 1px;
   overflow: hidden;
 }
+
+@media screen and (max-width: 1200px) 
+{
+  .featureproduct {
+    flex-direction: column-reverse;
+    height: 500px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .product{
+    width:100%;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
 
 @media screen and (max-width: 769px) {
   .featureproduct {
@@ -229,8 +249,6 @@ label {
   }
   .address span {
     font-size: 40px;
-    position: relative;
-    left: 15px;
   }
   form {
     position: relative;
@@ -240,5 +258,43 @@ label {
   input,
   button {
     height: 40px;
+  }
+  .search {
+    left: 350px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .search {
+    left: 250px;
+  }
+  .services{
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .services img{
+    position:absolute;
+    left:60px;
+  }
+  .services section{
+    margin:10px;
+  }
+  .services h2{
+    position:relative;
+    left:10px;
+  }
+  .two h2{
+    position:relative;
+    left:42px;
+  }
+  .three h2{
+    position:relative;
+    left:46px;
+  }
+  .address span {
+    font-size: 28px;
+    position: relative;
+    right:50px;
   }
 }
