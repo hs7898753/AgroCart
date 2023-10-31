@@ -28,7 +28,9 @@ function Navbar() {
             </li>
             <div className="SignInUp">
               <button className="add-to-cart">
-                <span className="text">Sign-in</span>
+                <span className="text">
+                  <a href="/signin">Sign-in</a>
+                </span>
               </button>
               <button className="add-to-cart">
                 <span className="text">Sign-up</span>
