@@ -2,6 +2,12 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import "./index.css";
 import Product from "../../components/Product";
+import React, { useState } from "react";
+import { Checkbox, Divider } from "antd";
+const CheckboxGroup = Checkbox.Group;
+const plainOptions = ["Apple", "Pear", "Orange"];
+const defaultCheckedList = ["Apple", "Orange"];
+
 function Shop() {
   return (
     <div className="shop">
@@ -13,10 +19,15 @@ function Shop() {
 }
 
 function ShopContent() {
-  const handleaddbookClick = () => {
-    if (window.location.pathname !== "/addbook") {
-      window.location.href = "/addbook";
-    }
+  const [checkedList, setCheckedList] = useState(defaultCheckedList);
+  const checkAll = plainOptions.length === checkedList.length;
+  const indeterminate =
+    checkedList.length > 0 && checkedList.length < plainOptions.length;
+  const onChange = (list) => {
+    setCheckedList(list);
+  };
+  const onCheckAllChange = (e) => {
+    setCheckedList(e.target.checked ? plainOptions : []);
   };
   return (
     <div className="shop-content">
@@ -25,6 +36,12 @@ function ShopContent() {
           <section className="category">
             <div className="category-head">
               <h1>Category</h1>
+            </div>
+            <div className="category-content">
+              <label>
+                <input type="checkbox" />
+                My Value
+              </label>
             </div>
           </section>
           <section className="filter">
