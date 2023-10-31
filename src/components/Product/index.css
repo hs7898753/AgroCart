@@ -10,7 +10,7 @@
 }
 .box {
   width: 300px;
-  height: 450px;
+  height: 400px;
   overflow: hidden;
   margin-top: 20px;
   margin-right: 5px;
@@ -26,12 +26,14 @@
 }
 .innerbox {
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .product-image {
   height: 100%;
 }
 .product-details {
-  border: 2px solid black;
   text-align: center;
 }
 .product-title {
@@ -47,6 +49,7 @@
   margin-bottom: 10px;
 }
 .product1-button {
+  margin-top: 10px;
   padding: 10px 20px;
   background: rgba(69, 117, 91, 1);
   border: none;
@@ -58,10 +61,10 @@
   color: #fff;
   transition: 0.4s;
 }
-.product-button:hover {
+.product1-button:hover {
   background: rgba(69, 117, 91, 1);
 }
-.product-button:active {
+.product1-button:active {
   transform: scale(0.98);
 }
 @media screen and (max-width: 1000px) {

@@ -1,6 +1,6 @@
 import ProductData from "./Data";
 import food from "../images/Fruits.jpg";
-import "./product.css";
+import "./index.css";
 
 function Product() {
   return (
