@@ -74,6 +74,10 @@ nav {
 }
 
 /* Sign-in && Sign-up Buttons css*/
+.SignInUp a {
+  text-decoration: none;
+  color: white;
+}
 
 @keyframes add-to-cart-animation {
   0% {
