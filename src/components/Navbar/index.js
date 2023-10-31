@@ -1,6 +1,7 @@
-import logo from "../logo.png";
-import "./Navbar.css";
+import logo from "../images/logo.png";
+import "./index.css";
 import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
 function Navbar() {
   const [clicked, setClicked] = useState(false);
   return (
@@ -25,14 +26,6 @@ function Navbar() {
             <li>
               <a href="/about">About</a>
             </li>
-            <div className="SignInUp">
-              <button className="add-to-cart">
-                <span className="text">Sign-in</span>
-              </button>
-              <button className="add-to-cart">
-                <span className="text">Sign-up</span>
-              </button>
-            </div>
           </ul>
         </div>
 

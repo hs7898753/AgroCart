@@ -2,7 +2,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Main from "../../components/Main";
 import "./index.css";
-import FeatureProduct from "../../components/FeatureProduct";
+import FeatureProduct from "../../components/FeatureProduct/index";
 
 function Home() {
   return (

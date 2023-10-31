@@ -1,10 +1,10 @@
-import "./FeatureProduct.css";
-import Vegetable from "./Vegetables.jpg";
-import Fruits from "./Fruits.jpg";
-import Grains from "./grains.jpg";
-import Delivery from "./delivery.png";
-import Cashback from "./cashback.png";
-import Support from "./support.png";
+import "./index.css";
+import Vegetable from "../images/Vegetables.jpg";
+import Fruits from "../images/Fruits.jpg";
+import Grains from "../images/grains.jpg";
+import Delivery from "../images/delivery.png";
+import Cashback from "../images/cashback.png";
+import Support from "../images/support.png";
 function FeatureProduct() {
   return (
     <>
