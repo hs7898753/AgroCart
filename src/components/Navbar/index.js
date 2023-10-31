@@ -26,6 +26,14 @@ function Navbar() {
             <li>
               <a href="/about">About</a>
             </li>
+            <div className="SignInUp">
+              <button className="add-to-cart">
+                <span className="text">Sign-in</span>
+              </button>
+              <button className="add-to-cart">
+                <span className="text">Sign-up</span>
+              </button>
+            </div>
           </ul>
         </div>
 

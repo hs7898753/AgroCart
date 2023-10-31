@@ -70,7 +70,9 @@ function FeatureProduct() {
                 autoFocus
                 required
               />
-              <button type="submit">Go</button>
+              <button type="submit" id="submit">
+                Go
+              </button>
             </form>
           </div>
         </div>
