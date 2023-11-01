@@ -1,6 +1,7 @@
-import Navbar from "../../components/Navbar/index";
 import "./index.css";
 import logo from "../../components/images/logo.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function SignIn() {
   return (
@@ -11,6 +12,20 @@ function SignIn() {
 }
 
 function SignInForm() {
+  const handlesigninClick = () => {
+    toast.success("Sign In SucessFull", {
+      position: "up", // You can adjust the position
+      autoClose: 1000, // Time in milliseconds to auto-close the toast
+      hideProgressBar: false, // Set to true to hide the progress bar
+      closeOnClick: true, // Close the toast when clicked
+      pauseOnHover: false, // Pause auto-close on hover
+      draggable: true, // Allow the user to drag the toast
+    });
+
+    if (window.location.pathname == "/signin") {
+      window.location.href = "/";
+    }
+  };
   return (
     <>
       <div className="signincontain">
@@ -68,7 +83,11 @@ function SignInForm() {
                 <a href="#">Forget Password?</a>
               </span>
               <div style={{ marginTop: "10px" }}>
-                <button className="add-to-cart" style={{ width: "100%" }}>
+                <button
+                  className="add-to-cart"
+                  style={{ width: "100%" }}
+                  onClick={handlesigninClick}
+                >
                   <span className="text">Sign-in</span>
                 </button>
               </div>
