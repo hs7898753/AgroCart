@@ -1,0 +1,47 @@
+.producerinfocontain {
+  background-color: rgba(69, 117, 91, 1);
+  height: 100vh;
+  width: 100vw;
+  color: black;
+  overflow: hidden;
+}
+
+.producerinfoinnercontain {
+  background-color: rgba(251, 250, 243, 1);
+  width: 55%;
+  height: 100%;
+  border-radius: 0 40px 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.producerinfoform {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  width: 70%;
+}
+
+.producerinfo-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.producerinfo-content {
+  margin-top: 45px;
+  font-size: 18px;
+  width: 80%;
+}
+
+.producerinfo-content input {
+  margin-top: 10px;
+  font-size: 15px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid rgba(227, 225, 227, 1);
+  width: 100%;
+  padding: 10px;
+}

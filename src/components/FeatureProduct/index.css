@@ -13,9 +13,9 @@
 .product {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   overflow: hidden;
   padding: 40px;
+  height: 100%;
 }
 .heading {
   color: white;
@@ -33,7 +33,7 @@
 
 .card {
   width: 250px;
-  height: 200px;
+  height: 300px;
   background: rgb(252, 252, 253);
   box-shadow: 4px 6px 14px #00000036;
   border-radius: 10px;
@@ -41,6 +41,10 @@
   padding: 30px;
   padding-right: 30px;
   transition: all 0.3s;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card:hover {
@@ -49,16 +53,17 @@
 }
 
 .card img {
-  width: 170px;
-  position: relative;
-  left: -20px;
+  width: 120%;
 }
 .card span {
   font-size: 25px;
-  position: relative;
-  top: 10px;
-  left: 40px;
-  background-color: #2f2f2f;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+}
+.card p {
+  color: rgba(162, 162, 162, 1);
 }
 
 .down {
@@ -75,21 +80,11 @@
 }
 .up span {
   position: relative;
-  top: 50px;
+  top: 40px;
 }
 .up p {
-  font-family: Jost;
-  color: rgba(163, 163, 163, 1);
-  font-size: 10px;
   position: relative;
-  top: 70px;
-}
-.down p {
-  font-family: Jost;
-  color: rgba(163, 163, 163, 1);
-  font-size: 10px;
-  position: relative;
-  top: 30px;
+  top: 40px;
 }
 
 /* Main Last */

@@ -14,17 +14,17 @@ function About() {
           <h1>Team Members</h1>
         </div>
         <div className="members">
-          <div className="card ">
+          <div className="card1 ">
             <img src={Harsh} alt="vegetable" />
             <span>Harsh Sharma</span>
             <p>(211B131)</p>
           </div>
-          <div className="card awasthi">
+          <div className="card1 awasthi">
             <img src={Awasthi} alt="vegetable" />
             <span>Harsh Awasthi</span>
             <p>(211B129)</p>
           </div>
-          <div className="card ">
+          <div className="card1 ">
             <img src={Soumay} alt="vegetable" />
             <span>Soumay Mishra</span>
             <p>(211B316)</p>

@@ -33,7 +33,9 @@ function Navbar() {
                 </span>
               </button>
               <button className="add-to-cart">
-                <span className="text">Sign-up</span>
+                <span className="text">
+                  <a href="/signup">Sign-up</a>
+                </span>
               </button>
             </div>
           </ul>
