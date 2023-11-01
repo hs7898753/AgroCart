@@ -1,9 +1,15 @@
 import logo from "../images/logo.png";
 import "./index.css";
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-function Navbar() {
+
+function Navbar(props) {
   const [clicked, setClicked] = useState(false);
+  const handlesigninClick = () => {
+    window.location.href = "/signin";
+  };
+  const handlesignupClick = () => {
+    window.location.href = "/signup";
+  };
   return (
     <>
       <nav className="navbar">
@@ -20,25 +26,30 @@ function Navbar() {
             </li>
             <li className="hide">|</li>
             <li>
-              <a href="/shop">Shop</a>
+              <a href="/shop" onClick={() => props.setShow(true)}>
+                Shop
+              </a>
             </li>
             <li className="hide">|</li>
             <li>
               <a href="/about">About</a>
             </li>
-            <div className="SignInUp">
-              <button className="add-to-cart">
-                <span className="text">
-                  <a href="/signin">Sign-in</a>
-                </span>
-              </button>
-              <button className="add-to-cart">
-                <span className="text">
-                  <a href="/signup">Sign-up</a>
-                </span>
-              </button>
+
+            <div className="cart" onClick={() => props.setShow(false)}>
+              <span>
+                <i className="fas fa-cart-plus" />
+              </span>
+              <span>{props.size}</span>
             </div>
           </ul>
+          <div className="SignInUp">
+            <button className="add-to-cart" onClick={handlesigninClick}>
+              <span className="text">Sign-in</span>
+            </button>
+            <button className="add-to-cart" onClick={handlesignupClick}>
+              <span className="text">Sign-up</span>
+            </button>
+          </div>
         </div>
 
         <div id="mobile">
