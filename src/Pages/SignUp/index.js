@@ -2,19 +2,24 @@ import Navbar from "../../components/Navbar/index";
 import "./index.css";
 import logo from "../../components/images/logo.png";
 
-function SignIn() {
+function SignUp() {
   return (
     <>
-      <SignInForm />
+      <SignUpForm />
     </>
   );
 }
 
-function SignInForm() {
+function SignUpForm() {
+  const handlenextstepClick = () => {
+    if (window.location.pathname == "/signup") {
+      window.location.href = "/privateinfo";
+    }
+  };
   return (
     <>
-      <div className="signincontain">
-        <div className="signininnercontain">
+      <div className="signupcontain">
+        <div className="signupinnercontain">
           <nav style={{ marginTop: "20px" }}>
             <a
               href="/"
@@ -40,36 +45,48 @@ function SignInForm() {
               </li>
             </ul>
           </nav>
-          <div className="signinform">
-            <section className="signin-head">
+          <div className="signupform">
+            <section className="signup-head">
               <span style={{ fontSize: "35px", fontWeight: "500" }}>
-                Welcome Back
+                Create an Account
               </span>
               <br />
               <span
                 style={{ color: "rgba(134, 134, 134, 1)", fontSize: "20px" }}
               >
-                Reconnect with your AgroCart Account for seamless access.
+                Create your AgroCart Account and Live Fresh Life.
               </span>
             </section>
-            <section className="signin-content">
-              <div>
-                <span>Username or Email</span>
-                <input
-                  type="text"
-                  placeholder="Enter your Username or Email"
-                ></input>
+            <section className="signup-content">
+              <div style={{ marginTop: "10px" }}>
+                <span>First Name</span>
+                <input type="text" placeholder="Enter your first name"></input>
+              </div>
+              <div style={{ marginTop: "10px" }}>
+                <span>Last Name</span>
+                <input type="text" placeholder="Enter your last name"></input>
+              </div>
+              <div style={{ marginTop: "10px" }}>
+                <span>Email</span>
+                <input type="email" placeholder="Enter your email"></input>
               </div>
               <div style={{ marginTop: "10px" }}>
                 <span>Password</span>
                 <input type="text" placeholder="Enter your Password"></input>
               </div>
-              <span style={{ paddingTop: "35px !important" }}>
-                <a href="#">Forget Password?</a>
-              </span>
-              <div style={{ marginTop: "10px" }}>
-                <button className="add-to-cart" style={{ width: "100%" }}>
-                  <span className="text">Sign-in</span>
+              <div
+                style={{
+                  marginTop: "10px",
+                  display: "flex",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <button
+                  className="add-to-cart"
+                  style={{ width: "50%" }}
+                  onClick={handlenextstepClick}
+                >
+                  <span className="text">Next Step</span>
                 </button>
               </div>
             </section>
@@ -80,4 +97,4 @@ function SignInForm() {
   );
 }
 
-export default SignIn;
+export default SignUp;

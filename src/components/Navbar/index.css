@@ -78,6 +78,10 @@ nav {
   text-decoration: none;
   color: white;
 }
+.SignInUp a:hover {
+  text-decoration: none;
+  color: black;
+}
 
 @keyframes add-to-cart-animation {
   0% {
