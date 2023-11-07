@@ -82,8 +82,31 @@ nav {
   text-decoration: none;
   color: black;
 }
+/* wishlist CSS */
 
-/* Cart Css */
+.wishlist {
+  cursor: pointer;
+  position: fixed;
+  top: 24px;
+  right: 100px;
+}
+
+.wishlist span:nth-child(1) {
+  font-size: 2rem;
+  color: green;
+}
+
+.wishlist span:nth-child(2) {
+  padding: 0 3px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  position: relative;
+  top: -15px;
+}
+
+/* Cart CSS */
 .cart {
   cursor: pointer;
   position: fixed;
@@ -128,7 +151,7 @@ nav {
   .SignInUp {
     position: fixed;
     top: 20px;
-    right: 90px;
+    right: 140px;
   }
 }
 
