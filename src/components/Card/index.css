@@ -1,0 +1,26 @@
+.product-image {
+  height: 190px;
+  overflow: hidden;
+}
+.product-details {
+  margin-top: 5px;
+  height: 190px;
+  overflow: hidden;
+}
+.product-title {
+  height: 80px;
+  overflow: auto;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+}
+.product-category {
+  margin-top: -5px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: blueviolet;
+}
+.product-price {
+}
+.product-details button {
+  width: 100%;
+  margin-top: -6px;
+}

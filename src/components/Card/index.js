@@ -1,24 +1,31 @@
-import food from "../images/Fruits.jpg";
+import { useDispatch } from "react-redux";
+import { addCartItem } from "../../store/cartReducer";
+import "./index.css";
 
-function Card(props) {
+function Card({ productId, title, rating, price, imageUrl, category }) {
+  const dispatch = useDispatch();
   return (
     <div className="box">
       <div className="innerbox">
         <div className="product-image">
-          <img src={food} alt={props.product.Title} />
+          <img src={imageUrl} alt={title} />
         </div>
         <div className="product-details">
-          <div className="product-title">{props.product.Title}</div>
-          <div className="product-author">{props.product.author}</div>
-          <div className="product-genre">{props.product.category}</div>
-          <div className="product-price">{props.product.price}</div>
+          <div className="product-title">{title}</div>
+
+          <div className="product-category">{category}</div>
+          <div className="product-price">${price}</div>
+          <button
+            className="product1-button"
+            onClick={() => {
+              dispatch(
+                addCartItem({ productId, title, rating, price, imageUrl }),
+              );
+            }}
+          >
+            Add to Cart
+          </button>
         </div>
-        <button
-          className="product1-button"
-          onClick={() => props.handleClick(props.product)}
-        >
-          Add to Cart
-        </button>
       </div>
     </div>
   );
