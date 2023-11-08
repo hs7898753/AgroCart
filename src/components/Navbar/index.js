@@ -13,6 +13,7 @@ function Navbar(props) {
     window.location.href = "/signup";
   };
   const cartItems = useSelector((state) => state.cartItems);
+  const wishList = useSelector((state) => state.wishList);
   return (
     <>
       <nav className="navbar">
@@ -39,10 +40,11 @@ function Navbar(props) {
             </li>
 
             <div className="wishlist">
-              <Link className="wishlist-icon" to="#">
+              <Link className="wishlist-icon" to="/wishlist">
                 <span>
-                  <i class="fa-regular fa-heart" />
+                  <i className="fa-regular fa-heart" />
                 </span>
+                <span>{wishList.length}</span>
               </Link>
             </div>
 
