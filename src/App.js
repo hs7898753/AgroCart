@@ -6,6 +6,7 @@ import SignUp from "./Pages/SignUp/index";
 import PrivateInfo from "./Pages/SignUp/PrivateInfo/index";
 import ProducerInfo from "./Pages/SignUp/ProducerInfo/index";
 import Cart from "./Pages/Cart";
+import Wishlist from "./Pages/WishList/index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles.css";
 import { Provider } from "react-redux";
@@ -25,6 +26,8 @@ export default function App() {
             <Route path="/privateinfo" element={<PrivateInfo />} />
             <Route path="/producerinfo" element={<ProducerInfo />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/wishlist" element={<Wishlist />} />
           </Routes>
         </Router>
       </Provider>

@@ -18,9 +18,16 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: blueviolet;
 }
-.product-price {
-}
 .product-details button {
   width: 100%;
   margin-top: -6px;
+}
+.wishlist-cardicon {
+  font-size: 1.5rem;
+  position: relative;
+  left: 90%;
+  cursor: pointer;
+}
+.wishlist-cardicon:hover {
+  color: red;
 }
