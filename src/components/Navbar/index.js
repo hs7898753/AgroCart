@@ -3,9 +3,14 @@ import "./index.css";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Navbar(props) {
   const [clicked, setClicked] = useState(false);
+  const { loginWithRedirect } = useAuth0();
+  const { logout } = useAuth0();
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
   const handlesigninClick = () => {
     window.location.href = "/signin";
   };
@@ -63,12 +68,25 @@ function Navbar(props) {
               </Link>
             </div>
             <div className="SignInUp">
-              <button className="add-to-cart" onClick={handlesigninClick}>
-                <span className="text">Sign-in</span>
-              </button>
-              <button className="add-to-cart" onClick={handlesignupClick}>
-                <span className="text">Sign-up</span>
-              </button>
+              {isAuthenticated ? (
+                <button
+                  className="add-to-cart"
+                  onClick={() =>
+                    logout({
+                      logoutParams: { returnTo: window.location.origin },
+                    })
+                  }
+                >
+                  <span className="text">Log-out</span>
+                </button>
+              ) : (
+                <button
+                  className="add-to-cart"
+                  onClick={() => loginWithRedirect()}
+                >
+                  <span className="text">Sign-in</span>
+                </button>
+              )}
             </div>
           </ul>
         </div>
