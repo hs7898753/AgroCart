@@ -1,32 +1,28 @@
-// Action Types
-const WISHLIST_ADD_ITEM = "wishList/addItem";
-const WISHLIST_REMOVE_ITEM = "wishList/removeItem";
+import { createSlice } from "@reduxjs/toolkit";
 
-// Action Creators
-export function addWishListItem(productData) {
-  return { type: WISHLIST_ADD_ITEM, payload: productData };
-}
-export function removeWishListItem(productId) {
-  return { type: WISHLIST_REMOVE_ITEM, payload: { productId } };
-}
-
-// Reducer
-export default function wishListReducer(state = [], action) {
-  switch (action.type) {
-    case WISHLIST_ADD_ITEM:
+// Create a slice
+const wishListSlice = createSlice({
+  name: "wishList",
+  initialState: [],
+  reducers: {
+    addItem: (state, action) => {
       const existingItem = state.find(
-        (wishlistItem) => wishlistItem.productId === action.payload.productId,
+        (wishlistItem) => wishlistItem.productId === action.payload.productId
       );
       if (!existingItem) {
-        return [...state, { ...action.payload }];
+        state.push({ ...action.payload });
       }
-      return state;
-
-    case WISHLIST_REMOVE_ITEM:
+    },
+    removeItem: (state, action) => {
       return state.filter(
-        (wishListItem) => wishListItem.productId !== action.payload.productId,
+        (wishListItem) => wishListItem.productId !== action.payload.productId
       );
-    default:
-      return state;
-  }
-}
+    },
+  },
+});
+
+// Export the action creators
+export const { addItem, removeItem } = wishListSlice.actions;
+
+// Export the reducer
+export default wishListSlice.reducer;
