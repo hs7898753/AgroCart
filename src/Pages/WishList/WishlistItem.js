@@ -1,6 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addCartItem } from "../../store/cartReducer";
+import { addItem, removeItem } from "../../store/wishListReducer";
+import {
+  addCartItem,
+  removeCartItem,
+  increaseItemQuantity,
+  decreaseItemQuantity,
+} from "../../store/cartReducer";
 
 export default function WishlistItem({
   productId,
@@ -10,9 +16,6 @@ export default function WishlistItem({
   imageUrl,
 }) {
   const dispatch = useDispatch();
-  {
-    console.log(title);
-  }
   return (
     <div className="cart-item-container">
       <div className="cart-item">

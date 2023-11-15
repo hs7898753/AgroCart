@@ -1,6 +1,11 @@
 import { useDispatch } from "react-redux";
-import { addCartItem } from "../../store/cartReducer";
-import { addWishListItem } from "../../store/wishListReducer";
+import {
+  addCartItem,
+  removeCartItem,
+  increaseItemQuantity,
+  decreaseItemQuantity,
+} from "../../store/cartReducer";
+import { addItem, removeItem } from "../../store/wishListReducer";
 import "./index.css";
 
 function Card({ productId, title, rating, price, imageUrl, category }) {
@@ -11,9 +16,7 @@ function Card({ productId, title, rating, price, imageUrl, category }) {
         <span
           className="wishlist-cardicon"
           onClick={() => {
-            dispatch(
-              addWishListItem({ productId, title, rating, price, imageUrl }),
-            );
+            dispatch(addItem({ productId, title, rating, price, imageUrl }));
           }}
         >
           <i className="fa-regular fa-heart" />
