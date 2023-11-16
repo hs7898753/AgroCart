@@ -19,6 +19,16 @@ function Navbar(props) {
   };
   const cartItems = useSelector((state) => state.cartItems);
   const wishList = useSelector((state) => state.wishList);
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
   return (
     <>
       <nav className="navbar">
@@ -69,8 +79,27 @@ function Navbar(props) {
             </div>
             <div className="SignInUp">
               {isAuthenticated ? (
-                <div className="userProfile">
-                  <i class="fa-solid fa-user" />
+                <div className="userProfilecontainer" onClick={toggleDropdown}>
+                  <i class="fa-solid fa-user userProfile" />
+                  {isDropdownOpen && (
+                    <div className="dropdownMenu">
+                      <ul>
+                        <li>Account</li>
+                        <li>Settings</li>
+                        <li
+                          onClick={() =>
+                            logout({
+                              logoutParams: {
+                                returnTo: window.location.origin,
+                              },
+                            })
+                          }
+                        >
+                          Logout
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <button
