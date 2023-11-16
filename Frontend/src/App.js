@@ -17,8 +17,8 @@ export default function App() {
   return (
     <>
       <Auth0Provider
-        domain="dev-mldebb5kkz2h50dh.us.auth0.com"
-        clientId="eGOTjrrCTR5maQ95OHn0U5BOKCTXmymZ"
+        domain="dev-u1xqekpin28kgoas.us.auth0.com"
+        clientId="Gefdot2FK8zJviOiye7jtiuHEFzDr0nA"
         authorizationParams={{
           redirect_uri: window.location.origin,
         }}
