@@ -45,3 +45,11 @@
   width: 100%;
   padding: 10px;
 }
+
+.basicdetailform {
+  background-color: rgba(251, 250, 243, 1);
+  border: none !important;
+  width: 80%;
+  position: relative;
+  left: 11%;
+}
