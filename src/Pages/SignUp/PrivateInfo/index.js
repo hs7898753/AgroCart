@@ -4,6 +4,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  login,
+  updatebasicdetail,
+  updateprivateinfo,
+  signup,
+  logout,
+} from "../../../store/userReducer";
 
 function PrivateInfo() {
   return (
@@ -14,42 +22,26 @@ function PrivateInfo() {
 }
 
 function PrivateInfoForm() {
-  const navigate = useNavigate();
-  const [selectedOption, setSelectedOption] = useState("");
+  const [age, setAge] = useState(18);
+  const [gender, setGender] = useState("");
+  const [location, setLocation] = useState(0);
+  const [purpose, setPurpose] = useState("");
+  const [companyname, setCompanyName] = useState("");
 
-  const handlenextstepClick = () => {
-    if (window.location.pathname == "/signup") {
-      window.location.href = "/privateinfo";
-    }
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+
+  const handleSubmitClick = (e) => {
+    e.preventDefault();
+    console.log(age, gender, location, purpose, companyname);
+    dispatch(
+      updateprivateinfo({ age, gender, location, purpose, companyname }),
+    );
+    console.log(user);
   };
+
   const handlepreviousstepClick = () => {
-    if (window.location.pathname == "/privateinfo") {
-      window.location.href = "/signup";
-    }
-  };
-
-  const handlepurposeSelectChange = (e) => {
-    const selectedValue = e.target.value;
-
-    if (selectedValue === "bussiness") {
-      navigate("/producerinfo");
-    } else if (selectedValue === "shopping") {
-      toast.success("Sign Up SucessFull", {
-        position: "down", // You can adjust the position
-        autoClose: 1000, // Time in milliseconds to auto-close the toast
-        hideProgressBar: false, // Set to true to hide the progress bar
-        closeOnClick: true, // Close the toast when clicked
-        pauseOnHover: false, // Pause auto-close on hover
-        draggable: true, // Allow the user to drag the toast
-      });
-
-      if (window.location.pathname == "/producerinfo") {
-        window.location.href = "/";
-      }
-    }
-
-    // Update the selected option in the state
-    setSelectedOption(selectedValue);
+    window.location.href = "/signup";
   };
 
   return (
@@ -104,61 +96,94 @@ function PrivateInfoForm() {
               </span>
             </section>
             <section className="privateinfo-content">
-              <div style={{ marginTop: "10px" }}>
-                <span>Age</span>
-                <input type="number" placeholder="Enter your age"></input>
-              </div>
-              <div style={{ marginTop: "10px" }}>
-                <span>Gender</span>
-                <select name="gender" id="selectgender">
-                  <option value="" style={{ textAlign: "center" }}>
-                    --Select--
-                  </option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
-              </div>
-              <div style={{ marginTop: "10px" }}>
-                <span>Location</span>
-                <input type="text" placeholder="Enter your location"></input>
-              </div>
-              <div style={{ marginTop: "10px" }}>
-                <span>Purpose of Using AgroCart</span>
-                <select
-                  name="purpose"
-                  id="selectgender"
-                  onChange={handlepurposeSelectChange}
-                  value={selectedOption}
+              <form onSubmit={handleSubmitClick} className="basicdetailform">
+                <div style={{ marginTop: "10px" }}>
+                  <span>Age</span>
+                  <input
+                    type="number"
+                    placeholder="Enter your age"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                    required
+                  ></input>
+                </div>
+                <div style={{ marginTop: "10px" }}>
+                  <span>Gender</span>
+                  <select
+                    name="gender"
+                    id="selectgender"
+                    value={gender}
+                    onChange={(e) => setGender(e.target.value)}
+                    required
+                  >
+                    <option value="" style={{ textAlign: "center" }}>
+                      --Select--
+                    </option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+                <div style={{ marginTop: "10px" }}>
+                  <span>Location</span>
+                  <input
+                    type="text"
+                    placeholder="Enter your location (Pincode)"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    required
+                  ></input>
+                </div>
+                <div style={{ marginTop: "10px" }}>
+                  <span>Purpose of Using AgroCart</span>
+                  <select
+                    name="purpose"
+                    id="selectgender"
+                    onChange={(e) => setPurpose(e.target.value)}
+                    value={purpose}
+                    required
+                  >
+                    <option value="" style={{ textAlign: "center" }}>
+                      --Select--
+                    </option>
+                    <option value="bussiness">Bussiness</option>
+                    <option value="shopping">Shopping</option>
+                  </select>
+                </div>
+                {purpose === "bussiness" && (
+                  <div style={{ marginTop: "10px" }}>
+                    <span>Company/Organization Name</span>
+                    <input
+                      type="text"
+                      placeholder="Enter your company/organization name"
+                      value={companyname}
+                      onChange={(e) => setCompanyName(e.target.value)}
+                      required
+                    />
+                  </div>
+                )}
+                <div
+                  style={{
+                    marginTop: "10px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                  }}
                 >
-                  <option value="" style={{ textAlign: "center" }}>
-                    --Select--
-                  </option>
-                  <option value="bussiness">Bussiness</option>
-                  <option value="shopping">Shopping</option>
-                </select>
-              </div>
-              <div
-                style={{
-                  marginTop: "10px",
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-              >
-                <button
-                  className="add-to-cart"
-                  style={{ width: "50%" }}
-                  onClick={handlenextstepClick}
-                >
-                  <span className="text">Previous Step</span>
-                </button>
-                <button
-                  className="add-to-cart"
-                  style={{ width: "50%" }}
-                  onClick={handlepreviousstepClick}
-                >
-                  <span className="text">Next Step</span>
-                </button>
-              </div>
+                  <button
+                    className="add-to-cart"
+                    style={{ width: "50%" }}
+                    onClick={handlepreviousstepClick}
+                  >
+                    <span className="text">Previous Step</span>
+                  </button>
+                  <button
+                    className="add-to-cart"
+                    style={{ width: "50%" }}
+                    type="submit"
+                  >
+                    <span className="text">Submit</span>
+                  </button>
+                </div>
+              </form>
             </section>
           </div>
         </div>

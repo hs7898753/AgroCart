@@ -3,7 +3,7 @@
   height: 100vh;
   width: 100vw;
   color: black;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .privateinfoinnercontain {
@@ -16,12 +16,13 @@
   align-items: center;
 }
 .privateinfoform {
-  margin-top: 100px;
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80%;
   width: 70%;
+  overflow-y: scroll;
 }
 
 .privateinfo-head {
