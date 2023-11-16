@@ -1,0 +1,89 @@
+.contain {
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.box {
+  width: 300px;
+  height: 440px;
+  overflow: hidden;
+  margin-top: 20px;
+  margin-right: 5px;
+  border: 1px solid rgba(69, 117, 91, 1);
+  box-shadow: 0 0 8px rgba(69, 117, 91, 1);
+  border-radius: 10px;
+}
+.box img {
+  margin: 12px;
+  width: 90%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+.innerbox {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.product-image {
+  height: 100%;
+}
+.product-details {
+  text-align: center;
+}
+.product-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+.product-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: red;
+  margin-bottom: 10px;
+}
+.product1-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: rgba(69, 117, 91, 1);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.4s;
+}
+.product1-button:hover {
+  background: rgba(69, 117, 91, 1);
+}
+.product1-button:active {
+  transform: scale(0.98);
+}
+@media screen and (max-width: 1000px) {
+  .contain {
+    width: 100%;
+    padding: 10px;
+  }
+  .box {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contain {
+    width: 100%;
+    padding: 10px;
+    overflow-x: hidden;
+  }
+  .box {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,291 @@
+.featureproduct {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: green;
+  width: 100%;
+  height: fit-content;
+  flex-basis: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.product {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  padding: 40px;
+  height: 100%;
+}
+.heading {
+  color: white;
+  flex-basis: 30%;
+  padding-left: 50px;
+}
+
+.heading span {
+  font-size: 50px;
+  font-family: Jost;
+  font-weight: 700;
+}
+
+/* Card CSS */
+
+.card {
+  width: 250px;
+  height: 300px;
+  background: rgb(252, 252, 253);
+  box-shadow: 4px 6px 14px #00000036;
+  border-radius: 10px;
+  color: black;
+  padding: 30px;
+  padding-right: 30px;
+  transition: all 0.3s;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  margin-top: -30px;
+  align-items: center;
+}
+
+.card img {
+  width: 120%;
+}
+.card span {
+  font-size: 25px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+}
+.card p {
+  color: rgba(162, 162, 162, 1);
+}
+
+.down {
+  position: relative;
+  top: 100px;
+}
+.up {
+  position: relative;
+  top: -70px;
+}
+.up img {
+  position: relative;
+  top: 40px;
+}
+.up span {
+  position: relative;
+  top: 40px;
+}
+.up p {
+  position: relative;
+  top: 40px;
+}
+
+/* Main Last */
+.mainLast {
+  height: 600px;
+  background: rgba(249, 249, 242, 1);
+}
+.services {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 100px;
+}
+.mainLast section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainLast img {
+  width: 80px;
+  padding-right: 10px;
+}
+.mainLast p {
+  font-family: Jost;
+  color: rgba(163, 163, 163, 1);
+  font-size: 15px;
+}
+
+.address {
+  position: relative;
+  top: 250px;
+  left: 20%;
+}
+.address span {
+  font-size: 50px;
+  color: rgba(78, 125, 100, 1);
+  font-family: Jost;
+  display: block;
+  align-content: center;
+}
+
+#delivery {
+  width: 100px;
+}
+
+/* Search Box CSS */
+.search {
+  position: relative;
+  left: 450px;
+}
+:root {
+  --rad: 0.7rem;
+  --dur: 0.3s;
+  --color-dark: #2f2f2f;
+  --color-light: #fff;
+  --color-brand: #57bd84;
+  --font-fam: "Lato", sans-serif;
+  --height: 3rem;
+  --btn-width: 6rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
+}
+form {
+  position: relative;
+  width: 20rem;
+  background: var(--color-brand);
+  border-radius: var(--rad);
+  border: 0.3px solid black;
+}
+input,
+button {
+  height: var(--height);
+  font-family: var(--font-fam);
+  border: 0;
+  color: var(--color-dark);
+  font-size: 1.8rem;
+}
+input[type="search"] {
+  outline: 0;
+  width: 100%;
+  background: var(--color-light);
+  padding: 0 1.6rem;
+  border-radius: var(--rad);
+  appearance: none;
+  transition: all var(--dur) var(--bez);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+#submit {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--btn-width);
+  font-weight: bold;
+  background: var(--color-brand);
+  border-radius: 0 var(--rad) var(--rad) 0;
+  color: #fff;
+}
+input:not(:placeholder-shown) {
+  border-radius: var(--rad) 0 0 var(--rad);
+  width: calc(100% - var(--btn-width));
+}
+input button {
+  display: block;
+}
+label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1200px) {
+  .featureproduct {
+    flex-direction: column-reverse;
+    height: 500px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .product {
+    width: 100%;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .featureproduct {
+    flex-direction: column-reverse;
+    height: 500px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .services {
+    padding-left: 20px;
+  }
+  .mainLast img {
+    width: 60px;
+    padding-right: 10px;
+  }
+  #delivery {
+    width: 80px;
+  }
+  .mainLast h2 {
+    font-size: 20px;
+  }
+  .address span {
+    font-size: 40px;
+  }
+  form {
+    position: relative;
+    right: 200px;
+    width: 15rem;
+  }
+  input,
+  button {
+    height: 40px;
+  }
+  .search {
+    left: 350px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search {
+    left: 250px;
+  }
+  .services {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .services img {
+    position: absolute;
+    left: 60px;
+  }
+  .services section {
+    margin: 10px;
+  }
+  .services h2 {
+    position: relative;
+    left: 10px;
+  }
+  .two h2 {
+    position: relative;
+    left: 42px;
+  }
+  .three h2 {
+    position: relative;
+    left: 46px;
+  }
+  .address span {
+    font-size: 28px;
+    position: relative;
+    right: 50px;
+  }
+}

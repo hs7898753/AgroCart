@@ -1,0 +1,228 @@
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.navbar {
+  background-color: rgba(249, 249, 242, 1);
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  height: 75px;
+}
+.logo img {
+  max-width: 120px;
+  height: auto;
+  position: absolute;
+  top: 0px;
+  left: 5px;
+}
+
+.navbarlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbarlist li {
+  list-style: none;
+  padding: 0 10px;
+  position: relative;
+  font-size: 25px;
+}
+.navbarlist li a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+
+.navbarlist li a:hover,
+.navbarlist li a.active {
+  color: crimson;
+}
+.navbarlist li a:hover:after,
+.navbarlist li a.active:after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background: crimson;
+  position: absolute;
+  bottom: -4px;
+  left: 15px;
+}
+
+#mobile {
+  display: none;
+}
+
+#mobile i {
+  color: black;
+  size: xl;
+}
+#bar {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+#mobile i {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Sign-in && Sign-up Buttons css*/
+.SignInUp a {
+  text-decoration: none;
+  color: white;
+}
+.SignInUp a:hover {
+  text-decoration: none;
+  color: black;
+}
+/* wishlist CSS */
+
+.wishlist {
+  cursor: pointer;
+  position: fixed;
+  top: 24px;
+  right: 100px;
+}
+
+.wishlist span:nth-child(1) {
+  font-size: 2rem;
+  color: green;
+}
+
+.wishlist span:nth-child(2) {
+  padding: 0 3px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  position: relative;
+  top: -15px;
+}
+
+/* Cart CSS */
+.cart {
+  cursor: pointer;
+  position: fixed;
+  top: 24px;
+  right: 30px;
+}
+
+.cart span:nth-child(1) {
+  font-size: 2rem;
+  color: green;
+}
+
+.cart span:nth-child(2) {
+  padding: 0 3px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  position: relative;
+  top: -15px;
+}
+
+@keyframes add-to-cart-animation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.add-to-cart:hover {
+  animation: add-to-cart-animation 0.5s ease-in-out;
+}
+
+@media screen and (min-width: 769px) {
+  .SignInUp {
+    position: fixed;
+    top: 20px;
+    right: 140px;
+  }
+}
+
+.SignInUp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1010;
+}
+.add-to-cart {
+  background-color: #000;
+  color: #fff;
+  font-size: 15px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.add-to-cart:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.add-to-cart.added {
+  background-color: #000;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+.add-to-cart.added .text {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 769px) {
+  #mobile {
+    display: block;
+  }
+  .hide {
+    display: none;
+  }
+
+  .navbarlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    float: right;
+    position: absolute;
+    top: 60px;
+    right: -300px;
+    width: 200px;
+    height: 87vh;
+    background: black;
+    padding: 40px 0 0 10px;
+    border-radius: 20px 0 0 20px;
+    border-left: 0.1px solid rgb(229, 240, 171);
+    z-index: 999;
+  }
+
+  .navbarlist li {
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+  .navbarlist li a {
+    color: white;
+  }
+  .navbarlist.active {
+    right: 0px;
+  }
+  .add-to-cart {
+    font-size: 10px;
+  }
+}

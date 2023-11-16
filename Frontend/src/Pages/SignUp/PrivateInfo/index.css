@@ -1,0 +1,58 @@
+.privateinfocontain {
+  background-color: rgba(69, 117, 91, 1);
+  height: 100vh;
+  width: 100vw;
+  color: black;
+  overflow: auto;
+}
+
+.privateinfoinnercontain {
+  background-color: rgba(251, 250, 243, 1);
+  width: 55%;
+  height: 100%;
+  border-radius: 0 40px 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.privateinfoform {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  width: 70%;
+  overflow-y: scroll;
+}
+
+.privateinfo-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.privateinfo-content {
+  margin-top: 45px;
+  font-size: 18px;
+  width: 80%;
+}
+
+.privateinfo-content input {
+  margin-top: 10px;
+  font-size: 15px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid rgba(227, 225, 227, 1);
+  width: 100%;
+  padding: 10px;
+}
+
+#selectgender {
+  margin-top: 10px;
+  font-size: 15px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid rgba(227, 225, 227, 1);
+  width: 100%;
+  padding: 10px;
+}
