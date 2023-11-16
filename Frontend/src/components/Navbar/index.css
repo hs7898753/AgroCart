@@ -228,13 +228,36 @@ nav {
 }
 
 .userProfile {
-  font-size: 25px;
+  font-size: 20px;
   position: relative;
   right: 25px;
   bottom: 3px;
-  border: 4px solid black;
-  border-radius: 35px;
-}
-.userProfile i {
+  border: 4px solid green;
+  border-radius: 40px;
+  cursor: pointer;
   padding: 8px;
+  color: green;
+}
+
+.dropdownMenu {
+  background-color: white;
+  position: absolute;
+  top: 110%; /* Position the dropdown box below the userProfile icon */
+  left: -120%;
+  padding: 10px;
+  border: 2px solid rgb(185, 184, 184);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.dropdownMenu li {
+  cursor: pointer;
+}
+.dropdownMenu li:hover {
+  color: green;
+}
+.userProfilecontainer {
+  position: relative;
+}
+.userProfilecontainer::after .dropdownMenu {
+  display: block; /* Show the dropdown box when hovering over userProfile */
 }
