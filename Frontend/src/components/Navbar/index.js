@@ -69,16 +69,9 @@ function Navbar(props) {
             </div>
             <div className="SignInUp">
               {isAuthenticated ? (
-                <button
-                  className="add-to-cart"
-                  onClick={() =>
-                    logout({
-                      logoutParams: { returnTo: window.location.origin },
-                    })
-                  }
-                >
-                  <span className="text">Log-out</span>
-                </button>
+                <div className="userProfile">
+                  <i class="fa-solid fa-user" />
+                </div>
               ) : (
                 <button
                   className="add-to-cart"
