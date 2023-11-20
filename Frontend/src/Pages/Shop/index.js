@@ -24,17 +24,45 @@ function ShopContent() {
               <h1>Category</h1>
             </div>
             <div className="category-content">
-              <label>
-                <input type="checkbox" />
-                My Value
-              </label>
+              <form className="category-form">
+                <div className="checkbox-group">
+                  <input
+                    type="checkbox"
+                    id="fruits"
+                    name="fruits"
+                    value="fruits"
+                  />
+                  <label htmlFor="fruits"> Fruits</label>
+                </div>
+                <br />
+                <div className="checkbox-group">
+                  <input
+                    type="checkbox"
+                    id="vegetables"
+                    name="vegetables"
+                    value="vegetables"
+                  />
+                  <label htmlFor="vegetables"> Vegetables </label>
+                </div>
+                <br />
+                <div className="checkbox-group">
+                  <input
+                    type="checkbox"
+                    id="grains"
+                    name="grains"
+                    value="grains"
+                  />
+                  <label htmlFor="grains"> Grains </label>
+                </div>
+                <br />
+                <br />
+                <input
+                  className="category-submit"
+                  type="submit"
+                  value="Submit"
+                />
+              </form>
             </div>
-          </section>
-          <section className="filter">
-            <div className="filter-head">
-              <h1>Filter</h1>
-            </div>
-            <div className="filter-category"></div>
           </section>
         </section>
         <section className="product1" style={{ overflowY: "auto" }}>
