@@ -35,4 +35,16 @@ h1 span {
   .main {
     height: 500px;
   }
+  .header h1 {
+    position: relative;
+    right: 25px;
+  }
+  .header h3 {
+    position: relative;
+    left: -13px;
+  }
+  .header p {
+    position: relative;
+    left: -13px;
+  }
 }
