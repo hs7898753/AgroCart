@@ -7,11 +7,13 @@ import PrivateInfo from "./Pages/SignUp/PrivateInfo/index";
 import ProducerInfo from "./Pages/SignUp/ProducerInfo/index";
 import Cart from "./Pages/Cart";
 import Wishlist from "./Pages/WishList/index";
+import AddItem from "./Pages/AddItem/index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles.css";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { Auth0Provider } from "@auth0/auth0-react";
+
 
 export default function App() {
   return (
@@ -36,6 +38,7 @@ export default function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/wishlist" element={<Wishlist />} />
+              <Route path="/additem" element={<AddItem />} />
             </Routes>
           </Router>
         </Provider>

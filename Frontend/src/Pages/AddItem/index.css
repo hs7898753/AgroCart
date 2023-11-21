@@ -1,0 +1,17 @@
+.form-container{
+    height:600px;
+    width: 700px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+}
+.form-container input{
+    height:40px;
+    width: 200px;
+    border-radius: 10px;
+}
+.form-container label{
+    color: black;
+    position: relative;
+    overflow: none;
+}
