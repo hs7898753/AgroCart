@@ -1,11 +1,9 @@
 import "./index.css";
 import logo from "../../components/images/logo.png";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
-import { BsCloudUpload } from "react-icons/bs";
-import { ImagetoBase64 } from "../../utility/ImagetBase64";
-
+import { storage, db } from "../../config/config";
+import { Link } from "react-router-dom";
 
 function AddItem() {
   return (
@@ -16,92 +14,93 @@ function AddItem() {
 }
 
 function AddItemForm() {
+  const [productName, setProductName] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [productPrice, setProductPrice] = useState(0);
+  const [productImg, setProductImg] = useState(null);
+  const [error, setError] = useState("");
 
-    const [data, setData] = useState({
-        name: "",
-        category: "",
-        image: "",
-        price: "",
-        description: "",
-      });
-      const handleOnchange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        setData((prev) => {
-          return {
-            ...prev,
-            [name]: value,
-          };
-        });
-      };
-      const Handlesubmit = async (e) => {
-        e.preventDefault();
-        // console.log(data);
-        const { name, image, category, price } = data;
-        if (name && image && category && price) {
-          const fetchData = await fetch(
-            `${process.env.REACT_APP_SERVER_DOMAIN}/uploadproduct`,
-            {
-              method: "POST",
-              headers: {
-                "content-type": "application/json",
-              },
-              body: JSON.stringify(data),
-            }
-          );
-          const dataRes = await fetchData.json();
-          setData(() => {
-            return {
-              name: "",
-              category: "",
-              image: "",
-              price: "",
-              description: "",
-            };
+  const types = ["image/png", "image/jpeg"]; // image types
+
+  const productImgHandler = (e) => {
+    let selectedFile = e.target.files[0];
+    if (selectedFile && types.includes(selectedFile.type)) {
+      setProductImg(selectedFile);
+      setError("");
+    } else {
+      setProductImg(null);
+      setError("Please select a valid image type (jpg or png)");
+    }
+  };
+
+  // add product
+  const addProduct = (e) => {
+    e.preventDefault();
+    const uploadTask = storage
+      .ref(`product-images/${productImg.name}`)
+      .put(productImg);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log(progress);
+      },
+      (err) => setError(err.message),
+      () => {
+        storage
+          .ref("product-images")
+          .child(productImg.name)
+          .getDownloadURL()
+          .then((url) => {
+            db.collection("Products")
+              .add({
+                title: productName,
+                description: description,
+                category: category,
+                price: Number(productPrice),
+                img: url,
+              })
+              .then(() => {
+                setProductName("");
+                setDescription("");
+                setCategory("");
+                setProductPrice(0);
+                setProductImg("");
+                setError("");
+                document.getElementById("file").value = "";
+              })
+              .catch((err) => setError(err.message));
           });
-          console.log(dataRes);
-          toast(dataRes.message);
-        } else {
-          toast("Enter required fields");
-        }
-      };
-      const uplodImage = async (e) => {
-        const data = await ImagetoBase64(e.target.files[0]);
-        // console.log(data);
-        setData((prev) => {
-          return {
-            ...prev,
-            image: data,
-          };
-        });
-      };
+      }
+    );
+  };
 
   return (
     <>
       <div className="signincontain">
         <div className="signininnercontain">
           <nav style={{ marginTop: "20px" }}>
-            <a
-              href="/"
+            <Link
+              to="/"
               className="logo"
               style={{ position: "relative", left: "-85%", top: "-20px" }}
             >
               <img src={logo} alt="logo" />{" "}
-            </a>
+            </Link>
 
             <ul className="navbarlist">
               <li>
-                <a href="/" className="active">
-                  Home
-                </a>
+                <Link to="/">Home</Link>
               </li>
               <li className="hide">|</li>
               <li>
-                <a href="/shop">Shop</a>
+                <Link to="/shop">Shop</Link>
               </li>
               <li className="hide">|</li>
               <li>
-                <a href="/about">About</a>
+                <Link to="/about">About</Link>
               </li>
             </ul>
           </nav>
@@ -118,85 +117,78 @@ function AddItemForm() {
               </span>
             </section>
             <section>
-            <form className="form-container">
-          <div>
-            <label className="labelone">Enter name of Product
-            <input
-              className="enterproduct"
-              type="text"
-              name="name"
-              onChange={handleOnchange}
-              value={data.name}
-            ></input></label>
-            <br/><br/>
-            <label className="labeltwo">Select the category
-            <select
-              className="selectcat"
-              name="category"
-              onChange={handleOnchange}
-              value={data.category}
-            >
-              <option value={"other"}>select category</option>
-              <option value={"fruits"}>Fruits</option>
-              <option value={"vegetable"}>Vegetable</option>
-              <option value={"grains"}>grains</option>
-            </select></label>
-            <br/><br/>
-            <label className="imagelabel" htmlFor="image">
-              Image
-              <div className="insideimg">
-                <input
-                  type={"file"}
-                  accept="image/*"
-                  id="image"
-                  className="hidden"
-                  onChange={uplodImage}
-                />
-                {data.image ? (
-                  <img className="uploadedimg" src={data.image} alt="" />
-                ) : (
-                  <span>
-                    <BsCloudUpload size={30} />
-                  </span>
-                )}
-              </div>
-            </label>
-            <br/><br/>
-            <label className="pricelabel" htmlFor="price">
-              Price
-            </label>
-            <input
-              className="priceinput"
-              type={"text"}
-              name="price"
-              onChange={handleOnchange}
-              value={data.price}
-            />
-            <br/><br/>
-            <label className="labeldesc" htmlFor="description">
-              Description
-            </label>
-            <textarea
-              className="desc"
-              rows={3}
-              cols={29}
-              name="description"
-              onChange={handleOnchange}
-              value={data.description}
-            ></textarea>
-            <br/><br/>
-            <button
-              className="btn btn-primary buttonone"
-              onClick={Handlesubmit}
-            >
-              Save
-            </button>
-            <br/><br/>
-            <button className="btn btn-danger buttontwo">
-              <a href="/">Exit</a>
-            </button>
-          </div>
-        </form>
+              <form
+                autoComplete="off"
+                className="form-container"
+                onSubmit={addProduct}
+              >
+                <div className="form-row">
+                  <label htmlFor="product-name" className="Label" >
+                    Title
+                  </label>
+
+                  <input
+                    type="text"
+                    className="form-control"
+                    required
+                    onChange={(e) => setProductName(e.target.value)}
+                    value={productName}
+                  />
+                </div>
+                <div className="form-row">
+                  <label htmlFor="product-price" className="Label">
+                    Price
+                  </label>
+
+                  <input
+                    type="number"
+                    className="form-control"
+                    required
+                    onChange={(e) => setProductPrice(e.target.value)}
+                    value={productPrice}
+                  />
+                </div>
+                <div className="form-row">
+                  <label htmlFor="product-name" className="Label">
+                    Description
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    required
+                    onChange={(e) => setDescription(e.target.value)}
+                    value={description}
+                  />
+                </div>
+                <div className="form-row">
+                  <label htmlFor="product-name" className="Label">
+                    Category
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    required
+                    onChange={(e) => setCategory(e.target.value)}
+                    value={category}
+                  />
+                </div>
+                <div className="form-row">
+                  <label htmlFor="product-img" className="Label">
+                    Image
+                  </label>
+                  <input
+                    type="file"
+                    className="form-control"
+                    id="file"
+                    required
+                    onChange={productImgHandler}
+                  />
+                </div>
+                <button type="submit" className="form-btn">
+                  ADD
+                </button>
+              </form>
+              {error && <span className="error-msg">{error}</span>}
             </section>
           </div>
         </div>

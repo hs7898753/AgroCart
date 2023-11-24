@@ -1,17 +1,46 @@
 .form-container{
-    height:600px;
-    width: 700px;
-    background-color: antiquewhite;
+    height:400px;
+    width: 40vw;
+    background-color: rgba(251, 250, 243, 1);
+    border:none;
     display: flex;
     flex-direction: column;
+   
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
 }
-.form-container input{
-    height:40px;
-    width: 200px;
-    border-radius: 10px;
-}
-.form-container label{
-    color: black;
-    position: relative;
+.form-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 13px;
+    width: 100%;
     overflow: none;
 }
+.form-row label{
+    overflow:visible;
+    position: relative;
+    font-size: 25px;
+}
+.form-container input{
+    width: 60%;
+    height: 40px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 10px;
+    
+   
+    font-size: 20px;
+    
+}
+.form-btn{
+    cursor: pointer;
+    width:200px;
+    color: white;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 10px;
+}
+
+
+

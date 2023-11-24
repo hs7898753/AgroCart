@@ -13,11 +13,14 @@ import "./styles.css";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { Auth0Provider } from "@auth0/auth0-react";
-
+import { ProductsContextProvider } from './Global/ProductsContext'
+import Signup from "./Pages/Sign-up";
+import Signin from "./Pages/Sign-in";
 
 export default function App() {
   return (
     <>
+     <ProductsContextProvider>
       <Auth0Provider
         domain="dev-u1xqekpin28kgoas.us.auth0.com"
         clientId="Gefdot2FK8zJviOiye7jtiuHEFzDr0nA"
@@ -31,11 +34,10 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/shop" element={<Shop />} />
-              <Route path="/signin" element={<SignIn />} />
-              <Route path="/signup" element={<SignUp />} />
+              <Route path="/signin" element={<Signin />} />
+              <Route path="/signup" element={<Signup />} />
               <Route path="/privateinfo" element={<PrivateInfo />} />
               <Route path="/producerinfo" element={<ProducerInfo />} />
-              <Route path="/cart" element={<Cart />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/additem" element={<AddItem />} />
@@ -43,6 +45,7 @@ export default function App() {
           </Router>
         </Provider>
       </Auth0Provider>
+      </ProductsContextProvider>
       ,
     </>
   );

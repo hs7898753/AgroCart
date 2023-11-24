@@ -1,0 +1,30 @@
+.inputcontrolcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .inputcontrolcontainer label {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #313131;
+    overflow: visible;
+    position: relative;
+    bottom: 15px;
+  }
+  
+  .inputcontrolcontainer input {
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    outline: none;
+    padding: 10px 15px;
+    color: #000;
+  }
+  
+  .inputcontrolcontainer input:hover {
+    border-color: #ccc;
+  }
+  
+  .inputcontrolcontainer input:focus {
+    border-color: #9900ff;
+  }

@@ -32,26 +32,21 @@ function Navbar(props) {
   return (
     <>
       <nav className="navbar">
-        <a href="/" className="logo">
+        <Link to="/" className="logo">
           <img src={logo} alt="logo" />{" "}
-        </a>
-
+        </Link>
         <div>
           <ul className={clicked ? "navbarlist active" : "navbarlist"}>
             <li>
-              <a href="/" className="active">
-                Home
-              </a>
+              <Link to="/">Home</Link>
             </li>
             <li className="hide">|</li>
             <li>
-              <a href="/shop" onClick={() => props.setShow(true)}>
-                Shop
-              </a>
+              <Link to="/shop">Shop</Link>
             </li>
             <li className="hide">|</li>
             <li>
-              <a href="/about">About</a>
+              <Link to="/about">About</Link>
             </li>
 
             <div className="wishlist">
@@ -72,7 +67,7 @@ function Navbar(props) {
                   {cartItems.reduce(
                     (accumulator, currentItem) =>
                       accumulator + currentItem.quantity,
-                    0,
+                    0
                   )}
                 </span>
               </Link>
