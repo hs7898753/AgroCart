@@ -72,6 +72,12 @@
   transform: translate(-40%, -90%);
 }
 
+.payment-gateway{
+  height: 100px;
+  width: 100vw;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 600px) {
   .cart-container {
     font-size: 8px;
