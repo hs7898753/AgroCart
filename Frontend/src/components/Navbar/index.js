@@ -11,12 +11,7 @@ function Navbar(props) {
   const { logout } = useAuth0();
   const { user, isAuthenticated, isLoading } = useAuth0();
 
-  const handlesigninClick = () => {
-    window.location.href = "/signin";
-  };
-  const handlesignupClick = () => {
-    window.location.href = "/signup";
-  };
+  
   const cartItems = useSelector((state) => state.cartItems);
   const wishList = useSelector((state) => state.wishList);
 

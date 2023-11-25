@@ -26,6 +26,7 @@ const Cart = () => {
             <div className="item-price">Price</div>
             <div className="quantity">Quantity</div>
             <div className="total">Total</div>
+            <div className="remove-item-header">Remove Item</div>
           </div>
           {cartItems.map(
             ({ productId, title, rating, price, imageUrl, quantity }) => (
@@ -45,7 +46,7 @@ const Cart = () => {
             <div></div>
             <div></div>
             <div className="total">
-              $
+            ₹
               {grandTotal.toLocaleString("en-US", { maximumFractionDigits: 2 })}
             </div>
           </div>

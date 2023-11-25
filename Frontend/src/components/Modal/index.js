@@ -1,7 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import "./index.css"
-
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Modal({ name, address, pincode, phoneNumber, setName, setAddress, setPincode, setPhoneNumber, buyNow }) {
     let [isOpen, setIsOpen] = useState(false)
@@ -11,8 +11,17 @@ export default function Modal({ name, address, pincode, phoneNumber, setName, se
     }
 
     function openModal() {
-        setIsOpen(true)
+        if(user && isAuthenticated)
+        {
+            setIsOpen(true)
+        }
+        else
+        {
+            alert("Please Sign-in First")
+        }
+        
     }
+    const { user, isAuthenticated, isLoading } = useAuth0();
 
     // console.log(name,address,pincode,phoneNumber)
     return (

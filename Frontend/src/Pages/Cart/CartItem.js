@@ -18,6 +18,7 @@ export default function CartItem({
   const dispatch = useDispatch();
   return (
     <div className="cart-item-container">
+      
       <div className="cart-item">
         <img src={imageUrl} alt={title} />
         <div>
@@ -27,15 +28,20 @@ export default function CartItem({
       </div>
       <div className="item-price">${price}</div>
       <div className="item-quantity">
-        <button onClick={() => dispatch(decreaseItemQuantity(productId))}>
+        <button onClick={() => dispatch(decreaseItemQuantity(productId))} style={{cursor:"pointer"}}>
           -
         </button>
         <span>{quantity}</span>
-        <button onClick={() => dispatch(increaseItemQuantity(productId))}>
+        <button onClick={() => dispatch(increaseItemQuantity(productId))} style={{cursor:"pointer"}}>
           +
         </button>
       </div>
       <div className="item-total">${quantity * price}</div>
+      <div >
+        <button className="remove-item-btn" onClick={() => dispatch(removeCartItem(productId))} style={{color:"tomato",backgroundColor:"white", cursor:"pointer" }}>
+          Remove
+        </button>
+        </div>
     </div>
   );
 }
