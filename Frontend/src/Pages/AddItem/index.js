@@ -100,7 +100,7 @@ function AddItemForm() {
               </li>
               <li className="hide">|</li>
               <li>
-                <Link to="/about">About</Link>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </nav>

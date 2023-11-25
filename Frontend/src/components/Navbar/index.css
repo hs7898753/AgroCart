@@ -65,7 +65,7 @@ nav {
 }
 #bar {
   position: absolute;
-  top: 20px;
+  top: 28px;
   right: 50px;
 }
 #mobile i {
@@ -185,6 +185,9 @@ nav {
 .add-to-cart.added .text {
   opacity: 0.5;
 }
+.logout{
+  display:none;
+}
 
 @media screen and (max-width: 769px) {
   #mobile {
@@ -223,9 +226,34 @@ nav {
     right: 0px;
   }
   .add-to-cart {
-    font-size: 10px;
+    font-size: 15px;
   }
+  .cart{
+    right: 15%;
+  }
+  .wishlist{
+    right: 25%;
+  }
+  .logout{
+    display:block;
+    color: tomato;
+  }
+  .userProfilecontainer{
+    display: none;
+  }
+  
 }
+
+@media screen and (max-width: 480px) {
+  .cart{
+    right: 20%;
+  }
+  .wishlist{
+    right: 33%;
+  }
+  
+}
+
 
 .userProfile {
   font-size: 20px;

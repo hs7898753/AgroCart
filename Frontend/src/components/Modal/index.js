@@ -17,7 +17,7 @@ export default function Modal({ name, address, pincode, phoneNumber, setName, se
     // console.log(name,address,pincode,phoneNumber)
     return (
         <>
-            <div style={{margin:"0 auto" }}>
+            <div className='modal-button-container'>
                 <button
                     type="button"
                     onClick={openModal}
@@ -32,7 +32,7 @@ export default function Modal({ name, address, pincode, phoneNumber, setName, se
                     <div className="modal-content">
                         <div className="modal-dialog">
                             <form className="modal-form" action="#">
-                                <div>
+                                <div className='subclass'>
                                     <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900">Enter Full Name</label><br/>
                                     <input
                                         value={name}
@@ -44,7 +44,7 @@ export default function Modal({ name, address, pincode, phoneNumber, setName, se
                                         required
                                     />
                                 </div>
-                                <div>
+                                <div className='subclass'>
                                     <label htmlFor="address" className="block mb-2 text-sm font-medium text-gray-900">Enter Full Address</label><br/>
                                     <input
                                         value={address}
@@ -56,7 +56,7 @@ export default function Modal({ name, address, pincode, phoneNumber, setName, se
                                         required
                                     />
                                 </div>
-                                <div>
+                                <div className='subclass'>
                                     <label htmlFor="pincode" className="block mb-2 text-sm font-medium text-gray-900">Enter Pincode</label><br/>
                                     <input
                                         value={pincode}
@@ -68,7 +68,7 @@ export default function Modal({ name, address, pincode, phoneNumber, setName, se
                                         required
                                     />
                                 </div>
-                                <div>
+                                <div className='subclass'>
                                     <label htmlFor="mobileNumber" className="block mb-2 text-sm font-medium text-gray-900">Enter Mobile Number</label><br/>
                                     <input
                                         value={phoneNumber}

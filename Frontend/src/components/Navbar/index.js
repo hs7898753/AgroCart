@@ -46,7 +46,7 @@ function Navbar(props) {
             </li>
             <li className="hide">|</li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/contact">Contact</Link>
             </li>
 
             <div className="wishlist">
@@ -104,6 +104,22 @@ function Navbar(props) {
                   <span className="text">Sign-in</span>
                 </button>
               )}
+              {
+                user && (
+                  <button
+                className="add-to-cart logout"
+                onClick={() =>
+                  logout({
+                    logoutParams: {
+                      returnTo: window.location.origin,
+                    },
+                  })
+                }
+              >
+                <span className="text">Logout</span>
+              </button>)
+              }
+              
             </div>
           </ul>
         </div>
@@ -119,7 +135,7 @@ function Navbar(props) {
             <i
               id="bar"
               onClick={() => setClicked(!clicked)}
-              className="fas fa-bars"
+              className="fas fa-bars bar"
             />
           )}
         </div>

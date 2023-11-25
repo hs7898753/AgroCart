@@ -4,16 +4,16 @@ import "./index.css";
 import Harsh from "../../components/ProfilePics/Harsh.jpg";
 import Awasthi from "../../components/ProfilePics/Awasthi.jpg";
 import Soumay from "../../components/ProfilePics/Soumay.jpg";
-function About() {
+function Contact() {
   return (
     <>
       <Navbar />
-      <div className="about">
-        <div className="heading">
+      <div className="contact">
+        <div className="contact-heading">
           <span>Developed By Team - 74 </span>
           <h1>Team Members</h1>
         </div>
-        <div className="members">
+        <div className="contact-members">
           <div className="card1 ">
             <img src={Harsh} alt="vegetable" />
             <span>Harsh Sharma</span>
@@ -38,4 +38,4 @@ function About() {
   );
 }
 
-export default About;
+export default Contact;

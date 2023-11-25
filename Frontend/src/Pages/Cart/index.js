@@ -51,9 +51,9 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <div className="payment-gateway">
+      
         <PaymentGateway grandTotal={grandTotal}/>
-      </div>
+      
       <Footer />
     </>
   );

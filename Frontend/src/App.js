@@ -1,6 +1,6 @@
 import Home from "./Pages/Home/index";
 import Shop from "./Pages/Shop/index";
-import About from "./Pages/About/index";
+import Contact from "./Pages/Contact/index";
 import SignIn from "./Pages/SignIn/index";
 import SignUp from "./Pages/SignUp/index";
 import PrivateInfo from "./Pages/SignUp/PrivateInfo/index";
@@ -32,7 +32,7 @@ export default function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/signin" element={<Signin />} />
               <Route path="/signup" element={<Signup />} />
