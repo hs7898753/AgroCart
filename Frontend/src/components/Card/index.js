@@ -27,7 +27,7 @@ function Card({ productId, title, rating, price, imageUrl, category }) {
         <div className="product-details">
           <div className="product-title">{title}</div>
           <div className="product-category">{category}</div>
-          <div className="product-price">${price}</div>
+          <div className="product-price"> ₹{price}</div>
           <button
             className="product1-button"
             onClick={() => {
