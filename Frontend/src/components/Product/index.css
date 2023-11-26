@@ -87,3 +87,11 @@
     overflow-x: hidden;
   }
 }
+@media screen and (max-width: 390px) {
+  .contain{
+    width: 100%;
+  }
+  .box{
+    width: 100%;
+  }
+}

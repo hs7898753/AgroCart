@@ -130,7 +130,46 @@
   background-color: rgba(240, 240, 240, 1);
   margin-top: 20px;
   width:60%;
-  height: 4%;
+  height: fit-content;
   border-radius: 10px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 769px){
+  .category-head{
+    font-size: 20px;
+  }
+  .add-item{
+    width:fit-content;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 390px){
+  .productList{
+    flex-direction: column;
+    height: fit-content;
+  }
+  .Category-Filter{
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    border-right: none;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-bottom: rgba(69, 117, 91, 1) 4px solid;
+  }
+  .category-form{
+    width: 90%;
+    margin: 0 auto;
+    right: 0px;
+  }
+  .add-item{
+    margin-bottom: 20px;
+    
+  }
+  .product1{
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+  }
 }

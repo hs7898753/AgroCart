@@ -32,7 +32,7 @@ function FeatureProduct() {
         <div className="heading">
           <span>Our Feature Products</span>
           <p>
-            We deliver packets of All fresh products direct from farms, straight
+            We deliver packets of All fresh products direct from farms,<br/> straight
             to your door.
           </p>
         </div>

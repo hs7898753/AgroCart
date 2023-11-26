@@ -246,12 +246,14 @@ nav {
 
 @media screen and (max-width: 480px) {
   .cart{
-    right: 20%;
+    right: 15%;
   }
   .wishlist{
     right: 33%;
   }
-  
+  #bar{
+    right: 20px;
+  }
 }
 
 

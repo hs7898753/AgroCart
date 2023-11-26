@@ -45,6 +45,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -288,4 +289,53 @@ label {
     position: relative;
     right: 50px;
   }
+  .product{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .card{
+    margin-right: 0px;
+  }
+  .heading{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 0px;
+  }
 }
+
+
+@media screen and (max-width: 390px) {
+  .down{
+    top:0px;
+  }
+  .featureproduct{
+    height: fit-content;
+  }
+  .product{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card{
+    height: 250px;
+    
+  }
+  .up{
+    top:0px;
+  }
+  .ttwo img{
+    height: 110px;
+  }
+  .heading{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .heading span{
+    display:inline-block;
+    font-size: 40px;
+    align-items: center;
+  }
+}
+
