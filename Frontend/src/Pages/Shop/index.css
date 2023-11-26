@@ -145,7 +145,7 @@
   }
 }
 
-@media screen and (max-width: 390px){
+@media screen and (max-width: 590px){
   .productList{
     flex-direction: column;
     height: fit-content;
